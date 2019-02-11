@@ -31,8 +31,8 @@ body.about
     background-image: url("backImages/BackImage2.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: right; 
-    background-color: #F8F4CE;            
+    background-position: right -300px center;
+    background-color: #EBE5AB;            
 }
 body.buy
 {
@@ -55,11 +55,12 @@ body.contact
     background-image: url("backImages/BackImage4.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: right 0% -10%;
+    background-position: right -300px center;
     background-color: #F8F4CE;  
 }
 footer
 {            
+    display: inline-block;
     height: 120px;
     background-color: #AF6F56;
     position: fixed;
@@ -105,7 +106,13 @@ article.buyArt
 }
 article.home
 {
-    margin-right: 50%
+    position: absolute;
+    display: block;
+    margin-right: 50%;
+    bottom: 150px;
+    top: 150px;
+    overflow: auto;
+    background-color: #80808073
 }
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
@@ -140,3 +147,22 @@ input[type=text], select, textarea {
     border-radius: 5px;
     padding: 20px;
   }
+  /* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
