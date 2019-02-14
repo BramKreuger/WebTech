@@ -31,7 +31,7 @@ body.about
     background-image: url("backImages/BackImage2.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: right -300px center;
+    background-position: right -500px center;
     background-color: #EBE5AB;            
 }
 body.buy
@@ -106,13 +106,17 @@ article.buyArt
 }
 article.home
 {
+    font-size: 1.5em;
     position: absolute;
     display: block;
-    margin-right: 50%;
+    padding-left: 15%;
+    padding-right: 15%;
     bottom: 150px;
     top: 150px;
     overflow: auto;
-    background-color: #80808073
+    text-align: left;
+    /*background-color: #80808073*/
+    background-color: rgba(235, 229, 171, 0.5);  
 }
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
