@@ -26,15 +26,15 @@ body.home
     background-position: right; 
     background-color: #F8F4CE;            
 }
-body.about
+body.plot
 {
     background-image: url("backImages/BackImage2.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: right -500px center;
-    background-color: #EBE5AB;      
+    background-position: right -300px center;
+    background-color: #EBE5AB;            
 }
-body.buy
+body.characters
 {
     background-image: url("backImages/BackImage3.jpg");
     background-repeat: no-repeat;
@@ -42,7 +42,7 @@ body.buy
     background-position: left; 
     background-color: #F8F4CE;            
 }
-body.memes
+body.world
 {
     background-image: url("backImages/BackImage5.jpg");
     background-repeat: no-repeat;
@@ -50,7 +50,7 @@ body.memes
     background-position: right; 
     background-color: #F8F4CE;            
 }
-body.contact
+body.buy
 {
     background-image: url("backImages/BackImage4.jpg");
     background-repeat: no-repeat;
@@ -63,13 +63,12 @@ footer
     display: inline-block;
     height: 120px;
     background-color: #AF6F56;
-    position: relative;
-    margin-bottom: 0px;
-    bottom: 0px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
     left: 0px;
     border: 2px solid #342528;
-    width: 100%;
-    margin: 0px;
 }
 aside 
 {
@@ -107,14 +106,13 @@ article.buyArt
 }
 article.home
 {
-   font-size: 1.5em;
+    position: absolute;
     display: block;
-    padding-left: 15%;
-    padding-right: 15%;
+    margin-right: 50%;
     bottom: 150px;
     top: 150px;
-    text-align: left;
-    background-color: rgba(235, 229, 171, 0.5);
+    overflow: auto;
+    background-color: #80808073
 }
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
