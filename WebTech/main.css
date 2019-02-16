@@ -11,12 +11,25 @@ h2
 header
 {
     font-family: gotFont; 
-    padding: 4px;
+    padding: 20px;
 }
 nav
 {
-    padding: 4px;
+    margin-left: 20px;
+    padding: 20px;
     font-size: 20px;
+    background-color: rgb(161, 159, 159);
+    width: 585px;
+}
+a
+{
+  background-color: rgb(102, 102, 102);
+  text-decoration: none;
+  padding: 15px;
+}
+a:hover
+{
+  background-color: rgb(36, 36, 36);
 }
 body.home
 {
@@ -48,7 +61,8 @@ body.world
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: right; 
-    background-color: #F8F4CE;            
+    background-color: #F8F4CE;   
+    margin: 0px;         
 }
 body.buy
 {
@@ -63,10 +77,11 @@ footer
     display: inline-block;
     height: 120px;
     background-color: #AF6F56;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     padding: 10px;
+    margin: 0 auto;
     left: 0px;
     border: 2px solid #342528;
 }
@@ -104,15 +119,10 @@ article.buyArt
     transform: translate(-10%, -50%);
     float: left;
 }
-article.home
+article.text
 {
-    position: absolute;
-    display: block;
-    margin-right: 50%;
-    bottom: 150px;
-    top: 150px;
-    overflow: auto;
-    background-color: #80808073
+    padding: 100px;
+    background-color: rgba(248, 244, 206, 0.466)
 }
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
