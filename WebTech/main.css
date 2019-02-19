@@ -158,7 +158,13 @@ article.text
 }
 
 
-
+/*~~~~~~~~~~~~~~~~~~~
+~~~~~ Map ~~~~
+~~~~~~~~~~~~~~~~~~~~*/
+.locationBox:nth-of-type(odd)
+{
+background-color: rgba(128, 128, 128, 0.459)
+}
 
 /*~~~~~~~~~~~~~~~~~~~
 ~~~~~ CHARACTERS ~~~~
