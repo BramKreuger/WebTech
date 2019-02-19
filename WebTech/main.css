@@ -21,6 +21,7 @@ h2
 
 
 
+
 /*~~~~~~~~~~~~~~~~~~~
 ~~~~~~ HEADER ~~~~~~~
 ~~~~~~~~~~~~~~~~~~~~*/
@@ -94,7 +95,8 @@ body.characters
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: left; 
-    background-color: #F8F4CE;            
+    background-color: #F8F4CE; 
+    height: 100%;           
 }
 body.world
 {
@@ -185,13 +187,10 @@ body.characters img
   margin-right: 10px;
 }
 
-p #karaktersuitleg
+#chars
 {
-
+  height: 500vh;
 }
-
-
-
 
 /*~~~~~~~~~~~~~~~~~~~
 ~~~~~~~~ BUY ~~~~~~~~
