@@ -1,36 +1,77 @@
 
+/*~~~~~~~~~~~~~~~~~~~
+~~~~~~~ FONTS ~~~~~~
+~~~~~~~~~~~~~~~~~~~~*/
 @font-face 
 {
 font-family: gotFont;
 src: url("Game of Thrones.ttf");
 }
+
+h1
+{
+    font-family: gotFont;
+    font-size: 2vw;
+}
+
 h2
 {
     font-family: gotFont;
 }
+
+
+
+/*~~~~~~~~~~~~~~~~~~~
+~~~~~~ HEADER ~~~~~~~
+~~~~~~~~~~~~~~~~~~~~*/
 header
 {
     font-family: gotFont; 
     padding: 20px;
+    padding-left: 60px;
 }
+
+
+
+/*~~~~~~~~~~~~~~~~~~~
+~~~~~ NAVIGATION ~~~~
+~~~~~~~~~~~~~~~~~~~~*/
 nav
 {
-    margin-left: 20px;
-    padding: 20px;
-    font-size: 20px;
-    background-color: rgb(161, 159, 159);
-    width: 585px;
+    position: relative;
+    margin-bottom: 100px;
 }
-a
+
+nav a
 {
-  background-color: rgb(102, 102, 102);
   text-decoration: none;
-  padding: 15px;
+  float: left;
+  text-align: center;
+  width: 16.6%;
+  font-size: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: rgba(175, 111, 86, 0.411);
+  color: black;
+
 }
-a:hover
+
+nav a:hover
 {
-  background-color: rgb(36, 36, 36);
+  background-color: rgb(129, 82, 63, 0.411);
 }
+
+nav a.current
+{
+  background-color: rgba(121, 53, 28, 0.411);
+}
+
+
+
+
+/*~~~~~~~~~~~~~~~~~~~
+~~~~~~~~ BODY ~~~~~~~
+~~~~~~~~~~~~~~~~~~~~*/
 body.home
 {
     background-image: url("backImages/BackImage1.jpg");
@@ -72,30 +113,164 @@ body.buy
     background-position: right -300px center;
     background-color: #F8F4CE;  
 }
+
+body.contact
+{
+    background-image: url("backImages/BackImage4.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right -300px center;
+    background-color: #F8F4CE;  
+}
+
+
+
+/*~~~~~~~~~~~~~~~~~~~
+~~~~~~ ASIDE ~~~~~~~
+~~~~~~~~~~~~~~~~~~~~*/
+aside 
+{   
+    float: right;
+    color: black;
+    width: 60%;
+}
+
+
+
+/*~~~~~~~~~~~~~~~~~~~
+~~~~ ARTICLES ~~~~
+~~~~~~~~~~~~~~~~~~~~*/
+article.text
+{
+  position: relative;
+  width: 83%;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  background-color: rgba(248, 244, 206, 0.466);
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+/*~~~~~~~~~~~~~~~~~~~
+~~~~~ CHARACTERS ~~~~
+~~~~~~~~~~~~~~~~~~~~*/
+body.characters img
+{
+  float: left;
+  margin-right: 20px;
+  width: 150px;
+  height: 231px;
+}
+
+.first
+{
+  float: left;
+  width: 35%;
+  height: 200px;
+  margin-right: 20px;
+}
+
+.second
+{
+  float: left;
+  width:35%;
+  height: 200px;
+  margin-right: 10px;
+}
+
+p #karaktersuitleg
+{
+
+}
+
+
+
+
+/*~~~~~~~~~~~~~~~~~~~
+~~~~~~~~ BUY ~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~*/
+#bookcover
+{
+  float: left;
+}
+
+
+
+/*~~~~~~~~~~~~~~~~~~~
+~~~~ CONTACTFORM ~~~~
+~~~~~~~~~~~~~~~~~~~~*/
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */  
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+input[type=email], select, textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */  
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: rgb(150, 95, 73);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+  background-color: rgb(122, 79, 62);
+}
+
+/* Add a background color and some padding around the form */
+#contactform
+{
+  float:right;
+  width: 50%;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+
+
+
+/*~~~~~~~~~~~~~~~~~~
+~~~~~~ FOOTER ~~~~~~
+~~~~~~~~~~~~~~~~~~~~*/
 footer
-{            
-    display: inline-block;
-    height: 120px;
+{   
+    clear: both;        
     background-color: #AF6F56;
     position: relative;
-    bottom: 0;
-    width: 100%;
-    padding: 10px;
     margin: 0 auto;
-    left: 0px;
+    height: 120px;
+    width: 98%;
+    padding: 10px;
     border: 2px solid #342528;
 }
-aside 
-{
-    color: black;
-    position: absolute;
-    width: 20%;
-    right: 4px;
-}
-h1
-{
-    font-family: gotFont; 
-}
+
 img.footerImg
 {            
     padding:1px;
@@ -104,69 +279,14 @@ img.footerImg
     bottom: 15px;
     right: 15px;
 }
-article.buyArt
-{
-    display: block;
-    border:1px solid #021a40;    
-    text-align: center;
-    background: #AF6F56;
-    color: black;
-    padding: 1em;
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    margin-right: -10%;
-    transform: translate(-10%, -50%);
-    float: left;
-}
-article.text
-{
-    padding: 100px;
-    background-color: rgba(248, 244, 206, 0.466)
-}
-/* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea {
-    width: 100%; /* Full width */
-    padding: 12px; /* Some padding */  
-    border: 1px solid #ccc; /* Gray border */
-    border-radius: 4px; /* Rounded borders */
-    box-sizing: border-box; /* Make sure that padding and width stays in place */
-    margin-top: 6px; /* Add a top margin */
-    margin-bottom: 16px; /* Bottom margin */
-    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-  }
-  input[type=email], select, textarea {
-    width: 100%; /* Full width */
-    padding: 12px; /* Some padding */  
-    border: 1px solid #ccc; /* Gray border */
-    border-radius: 4px; /* Rounded borders */
-    box-sizing: border-box; /* Make sure that padding and width stays in place */
-    margin-top: 6px; /* Add a top margin */
-    margin-bottom: 16px; /* Bottom margin */
-    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-  }
-  
-  /* Style the submit button with a specific background color etc */
-  input[type=submit] {
-    background-color: rgb(150, 95, 73);
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  /* When moving the mouse over the submit button, add a darker green color */
-  input[type=submit]:hover {
-    background-color: rgb(122, 79, 62);
-  }
-  
-  /* Add a background color and some padding around the form */
-  .container {
-    width: 50%;
-    border-radius: 5px;
-    padding: 20px;
-  }
+
+
+
+/*~~~~~~~~~~~~~~~~~~
+~~~~~ SCROLLBAR ~~~~
+~~~~~~~~~~~~~~~~~~~~*/
+
+
   /* width */
 ::-webkit-scrollbar {
   width: 10px;
