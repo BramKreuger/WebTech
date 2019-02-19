@@ -252,10 +252,11 @@ input[type=submit]:hover {
 /* Add a background color and some padding around the form */
 #contactform
 {
-  float:right;
+  float: left;
   width: 50%;
   border-radius: 5px;
   padding: 20px;
+  background-color: rgba(248, 244, 206, 0.466);
 }
 
 
