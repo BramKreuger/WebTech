@@ -70,7 +70,7 @@ nav a.current
 ~~~~~~~~~~~~~~~~~~~~*/
 body
 {
-	margin:0px;
+	margin:0px 0px 0px 0px;
 	background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -90,14 +90,14 @@ body.characters
 {
     background-image: url("backImages/BackImage3.jpg");
     background-position: left; 
-    background-color: #F8F4CE; 
+    background-color: #ECC371; 
     height: 100%;           
 }
 body.world
 {
     background-image: url("backImages/BackImage5.jpg");
     background-position: right; 
-    background-color: #F8F4CE;           
+    background-color: #EDEAB3;           
 }
 body.author
 {
@@ -142,6 +142,7 @@ body.world ol
 /*~~~~~~~~~~~~~~~~~~~
 ~~~~~ CHARACTERS ~~~~
 ~~~~~~~~~~~~~~~~~~~~*/
+
 div.characters
 {
 	height: auto;
