@@ -135,14 +135,23 @@ article.text
   background-color: rgba(248, 244, 206, 0.466);
   text-align: left;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
 }
 
+/*~~~~~~~~~~~~~~~~~~~
+~~~~~~~ WORLD ~~~~~~
+~~~~~~~~~~~~~~~~~~~~*/
 body.world ol{
  -webkit-column-count: 4;
  -moz-column-count: 4;
  -o-column-count: 4;
-  column-count: 4; 
+  column-count: 4;
+  font-size: 20px;
 } 
+
+body.world ol a{
+    color: black;
+}
 
 
 .locationBox:nth-of-type(odd)
@@ -156,7 +165,8 @@ background-color: rgba(128, 128, 128, 0.459)
 div.characters{
 	display: grid;
 	grid-gap: 30px;
-	grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+    grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+    font-size: 20px;
 }
 
 div.characters img{
@@ -202,7 +212,8 @@ body.world img
 body.home table{
 	width:100%;
 	height:100px;
-	border-collapse: collapse;
+    border-collapse: collapse;
+    font-size: 20px;
 }
 body.home th, td{
 	padding: 10px;
