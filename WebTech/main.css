@@ -11,15 +11,13 @@ src: url("Game of Thrones.ttf");
 h1
 {
     font-family: gotFont;
-    font-size: 2vw;
+    font-size: fixed;
 }
 
 h2
 {
     font-family: gotFont;
 }
-
-
 
 
 /*~~~~~~~~~~~~~~~~~~~
@@ -32,8 +30,6 @@ header
     padding-left: 60px;
 }
 
-
-
 /*~~~~~~~~~~~~~~~~~~~
 ~~~~~ NAVIGATION ~~~~
 ~~~~~~~~~~~~~~~~~~~~*/
@@ -41,6 +37,7 @@ nav
 {
     position: relative;
     margin-bottom: 100px;
+   
 }
 
 nav a
@@ -48,7 +45,7 @@ nav a
   text-decoration: none;
   float: left;
   text-align: center;
-  width: 16.6%;
+  width: 20%;
   font-size: 20px;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -62,17 +59,21 @@ nav a:hover
   background-color: rgb(129, 82, 63, 0.411);
 }
 
+
+
 nav a.current
 {
   background-color: rgba(121, 53, 28, 0.411);
 }
 
 
-
-
 /*~~~~~~~~~~~~~~~~~~~
 ~~~~~~~~ BODY ~~~~~~~
 ~~~~~~~~~~~~~~~~~~~~*/
+
+body{
+	margin:0px;
+}
 body.home
 {
     background-image: url("backImages/BackImage1.jpg");
@@ -104,10 +105,9 @@ body.world
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: right; 
-    background-color: #F8F4CE;   
-    margin: 0px;         
+    background-color: #F8F4CE;           
 }
-body.buy
+body.author
 {
     background-image: url("backImages/BackImage4.jpg");
     background-repeat: no-repeat;
@@ -116,26 +116,6 @@ body.buy
     background-color: #F8F4CE;  
 }
 
-body.contact
-{
-    background-image: url("backImages/BackImage4.jpg");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: right -300px center;
-    background-color: #F8F4CE;  
-}
-
-
-
-/*~~~~~~~~~~~~~~~~~~~
-~~~~~~ ASIDE ~~~~~~~
-~~~~~~~~~~~~~~~~~~~~*/
-aside 
-{   
-    float: right;
-    color: black;
-    width: 60%;
-}
 
 
 
@@ -157,10 +137,14 @@ article.text
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body.world ol{
+ -webkit-column-count: 4;
+ -moz-column-count: 4;
+ -o-column-count: 4;
+  column-count: 4; 
+} 
 
-/*~~~~~~~~~~~~~~~~~~~
-~~~~~ Map ~~~~
-~~~~~~~~~~~~~~~~~~~~*/
+
 .locationBox:nth-of-type(odd)
 {
 background-color: rgba(128, 128, 128, 0.459)
@@ -169,96 +153,18 @@ background-color: rgba(128, 128, 128, 0.459)
 /*~~~~~~~~~~~~~~~~~~~
 ~~~~~ CHARACTERS ~~~~
 ~~~~~~~~~~~~~~~~~~~~*/
-body.characters img
-{
-  float: left;
-  margin-right: 20px;
-  width: 150px;
-  height: 231px;
+div.characters{
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
 }
 
-.first
-{
-  float: left;
-  width: 35%;
-  height: 200px;
-  margin-right: 20px;
+div.characters img{
+  	float: left;
+  	margin-right: 20px;
+  	width: 180px;
+  	height: 277px;
 }
-
-.second
-{
-  float: left;
-  width:35%;
-  height: 200px;
-  margin-right: 10px;
-}
-
-#chars
-{
-  height: 500vh;
-}
-
-/*~~~~~~~~~~~~~~~~~~~
-~~~~~~~~ BUY ~~~~~~~~
-~~~~~~~~~~~~~~~~~~~~*/
-#bookcover
-{
-  float: left;
-}
-
-
-
-/*~~~~~~~~~~~~~~~~~~~
-~~~~ CONTACTFORM ~~~~
-~~~~~~~~~~~~~~~~~~~~*/
-
-/* Style inputs with type="text", select elements and textareas */
-input[type=text], select, textarea {
-  width: 100%; /* Full width */
-  padding: 12px; /* Some padding */  
-  border: 1px solid #ccc; /* Gray border */
-  border-radius: 4px; /* Rounded borders */
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
-  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-}
-input[type=email], select, textarea {
-  width: 100%; /* Full width */
-  padding: 12px; /* Some padding */  
-  border: 1px solid #ccc; /* Gray border */
-  border-radius: 4px; /* Rounded borders */
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
-  margin-bottom: 16px; /* Bottom margin */
-  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-}
-
-/* Style the submit button with a specific background color etc */
-input[type=submit] {
-  background-color: rgb(150, 95, 73);
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-/* When moving the mouse over the submit button, add a darker green color */
-input[type=submit]:hover {
-  background-color: rgb(122, 79, 62);
-}
-
-/* Add a background color and some padding around the form */
-#contactform
-{
-  float: left;
-  width: 50%;
-  border-radius: 5px;
-  padding: 20px;
-  background-color: rgba(248, 244, 206, 0.466);
-}
-
 
 
 
@@ -270,45 +176,40 @@ footer
     clear: both;        
     background-color: #AF6F56;
     position: relative;
-    margin: 0 auto;
-    height: 120px;
-    width: 98%;
+    
+    height: 100%;
+    width: auto;
     padding: 10px;
     border: 2px solid #342528;
 }
 
-img.footerImg
-{            
-    padding:1px;
-    border:1px solid #021a40;
-    position: relative;
-    bottom: 15px;
-    right: 15px;
+footer img
+{
+	float: right;
 }
-
-
 
 /*~~~~~~~~~~~~~~~~~~
-~~~~~ SCROLLBAR ~~~~
+~~~~~~ IMAGES ~~~~~~
 ~~~~~~~~~~~~~~~~~~~~*/
 
-
-  /* width */
-::-webkit-scrollbar {
-  width: 10px;
+body.world img
+{
+    max-width: 100%;
+    height: auto;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1; 
+
+body.home table{
+	width:100%;
+	height:100px;
+	border-collapse: collapse;
 }
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888; 
+body.home th, td{
+	padding: 10px;
+	text-align: left ;
+	border: 1px solid black;
+	
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555; 
-}
+
+
