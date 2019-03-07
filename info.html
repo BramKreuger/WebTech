@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script>
+       // run this function when the document is loaded
+       window.onload = function() {
+
+         // create a couple of elements in an otherwise empty HTML page
+         var heading = document.createElement("h1");
+         var heading_text = document.createTextNode("Game of Thrones");
+         heading.appendChild(heading_text);
+         document.body.appendChild(heading);
+
+        //Add nav elements
+        var links = ["Home", "Plot", "Characters", "World", "Author"];
+        for(i=0; i < 5; i++) {
+            var navLink = document.createElement("a");
+            var navLinkText = document.createTextNode(links[i]);
+            navLink.setAttribute('href', links[i].charAt(0).toLowerCase() + links[i].slice(1) + ".html");
+            navLink.append(navLinkText);
+            document.body.appendChild(navLink);
+        }
+      }
+    </script>
+  </head>
+  <body>
+      <nav>          
+      </nav>
+  </body>
+</html>
