@@ -1,29 +1,58 @@
 <html>
   <head>
     <script>
-       // run this function when the document is loaded
-       window.onload = function() {
+        // run this function when the document is loaded
+        window.onload = function() {
 
-         // create a couple of elements in an otherwise empty HTML page
-         var heading = document.createElement("h1");
-         var heading_text = document.createTextNode("Game of Thrones");
-         heading.appendChild(heading_text);
-         document.body.appendChild(heading);
+        //Add styleSheet
+        var sheet = document.createElement('link');
+        sheet.setAttribute('href', 'style/main.css');
+        sheet.setAttribute('rel', "stylesheet");
+        sheet.setAttribute('type', "text/css");
+        document.body.append(sheet)
+
+        document.body.classList.add("home");
+
+        // Add header
+        var header = document.getElementById('myHeader');
+        var heading = document.createElement("h1");
+        var headingText = document.createTextNode("Game of Thrones");
+        heading.appendChild(headingText);
+        header.appendChild(heading);
 
         //Add nav elements
+        var nav = document.getElementById('myNav');
         var links = ["Home", "Plot", "Characters", "World", "Author"];
         for(i=0; i < 5; i++) {
             var navLink = document.createElement("a");
             var navLinkText = document.createTextNode(links[i]);
             navLink.setAttribute('href', links[i].charAt(0).toLowerCase() + links[i].slice(1) + ".html");
             navLink.append(navLinkText);
-            document.body.appendChild(navLink);
+            nav.appendChild(navLink);
         }
+        
+        //Add Article
+        var article =  document.getElementById('myArticle');
+        var articleText = document.createTextNode("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a mi vitae velit ullamcorper posuere. Maecenas blandit felis a neque rutrum ")
+        article.appendChild(articleText);
+
+        //Add footer
+        var footer =  document.getElementById('myFooter');
+        var footerImg = document.createElement('img');
+        var footerText = document.createTextNode("Created by: Daniël Bezema, Bram Kreuger en Nikki Evers. \n University Utrecht \n Webtechnology \n INFOB2WT ");
+        footerImg.setAttribute('src', "style/images/utrecht_university_english_logo_transparent.png");
+        footerImg.setAttribute('alt', 'Image of Utrecht university logo');
+        //footerText.createTextNode("Created by: Daniël Bezema, Bram Kreuger en Nikki Evers. \n University Utrecht \n Webtechnology \n INFOB2WT ");
+        footer.appendChild(footerText);
+        footer.appendChild(footerImg);
+        
       }
     </script>
   </head>
   <body>
-      <nav>          
-      </nav>
+      <header id="myHeader"></header>
+      <nav id="myNav"></nav>
+      <article id="myArticle"></article>
+      <footer id="myFooter"></footer>
   </body>
 </html>
