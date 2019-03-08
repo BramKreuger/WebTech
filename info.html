@@ -1,6 +1,9 @@
+<!DOCTYPE html>
 <html>
   <head>
     <script>
+        /// FIRST PART ADDING BASIC HTML/STYLE
+
         // run this function when the document is loaded
         window.onload = function() {
 
@@ -33,8 +36,15 @@
         
         //Add Article
         var article =  document.getElementById('myArticle');
-        var articleText = document.createTextNode("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a mi vitae velit ullamcorper posuere. Maecenas blandit felis a neque rutrum ")
-        article.appendChild(articleText);
+        var articleTitle = document.createElement('h2');
+        articleTitle.textContent = "Info";
+        article.appendChild(articleTitle);
+        var articlePar = document.createElement("p");
+        for(i=0; i<50; i++)
+        {
+            var articleText = document.createTextNode("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a mi vitae velit ullamcorper posuere. Maecenas blandit felis a neque rutrum ")
+            article.appendChild(articleText);
+        }
 
         //Add footer
         var footer =  document.getElementById('myFooter');
@@ -42,9 +52,34 @@
         var footerText = document.createTextNode("Created by: Daniël Bezema, Bram Kreuger en Nikki Evers. \n University Utrecht \n Webtechnology \n INFOB2WT ");
         footerImg.setAttribute('src', "style/images/utrecht_university_english_logo_transparent.png");
         footerImg.setAttribute('alt', 'Image of Utrecht university logo');
-        //footerText.createTextNode("Created by: Daniël Bezema, Bram Kreuger en Nikki Evers. \n University Utrecht \n Webtechnology \n INFOB2WT ");
         footer.appendChild(footerText);
         footer.appendChild(footerImg);
+
+        /// ADDING CLASSES
+        class Book
+        {
+            constructor(author, genre, publisher, language, numberOfPages, productSize, isbn, edition)
+            {
+                this.author = author;
+                this.genre = genre;
+                this.publisher = publisher;
+                this.language = language;
+                this.numberOfPages = numberOfPages;
+                this.productSize = productSize;
+                this.isbn = isbn
+                this.edition = edition;
+            }
+        }
+        class Author
+        {
+            constructor(name, dateOfBirth, placeOfBirth, nationality)
+            {
+                this.name = name;
+                this.dateOfBirth = dateOfBirth;
+                this.placeOfBirth = placeOfBirth;
+                this.nationality = nationality;
+            }
+        }
         
       }
     </script>
@@ -52,7 +87,7 @@
   <body>
       <header id="myHeader"></header>
       <nav id="myNav"></nav>
-      <article id="myArticle"></article>
+      <article id="myArticle" class="text"></article>
       <footer id="myFooter"></footer>
   </body>
 </html>
