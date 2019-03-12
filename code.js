@@ -24,42 +24,44 @@ window.onload = function() {
     var heading = document.createElement("h1");
     var headingText = document.createTextNode("Game of Thrones");
     heading.appendChild(headingText);
-    header.appendChild(heading);
+    header.appendChild(heading);    
 
-    //Add the selector for the elements to the header
-    var selector1 = document.createElement("SELECT");
-    selector1.setAttribute("id", "mySelect1");
-    header.appendChild(selector1);
-    
-    temp = document.getElementsByClassName("moddable");
-    var semElements = [temp.length];
-    console.log(temp);
-    console.log(semElements);
-    for(i=0; i < temp.length; i++)
-        semElements[i] = temp[i].localName;
-
-    for(i=0; i < semElements.length; i++)
+    function loadSelectors()
     {
-        var z = document.createElement("option");
-        z.setAttribute("value", semElements[i]);
-        var t = document.createTextNode(semElements[i]);
-        z.appendChild(t);
-        selector1.appendChild(z);
-    }
+        //Add the selector for the elements to the header
+        var selector1 = document.createElement("SELECT");
+        selector1.setAttribute("id", "mySelect1");
+        header.appendChild(selector1);
+        
+        var temp = document.getElementsByClassName("moddable");
+        var semElements = [temp.length]
+        console.log(semElements)
+        for(i=0; i < temp.length; i++)
+            semElements[i] = temp[i].localName;
 
-    //Add the selector for the styles to the header
-    var selector2 = document.createElement("SELECT");
-    selector2.setAttribute("id", "mySelect");
-    header.appendChild(selector2);
-    
-    var styleElements = ["Dark", "Blue", "Light", "Craycray"];
-    for(i=0; i < semElements.length; i++)
-    {
-        var z = document.createElement("option");
-        z.setAttribute("value", styleElements[i]);
-        var t = document.createTextNode(styleElements[i]);
-        z.appendChild(t);
-        selector2.appendChild(z);
+        for(i=0; i < semElements.length; i++)
+        {
+            var z = document.createElement("option");
+            z.setAttribute("value", semElements[i]);
+            var t = document.createTextNode(semElements[i]);
+            z.appendChild(t);
+            selector1.appendChild(z);
+        }
+
+        //Add the selector for the styles to the header
+        var selector2 = document.createElement("SELECT");
+        selector2.setAttribute("id", "mySelect");
+        header.appendChild(selector2);
+        
+        var styleElements = ["Normal", "Dark", "Blue", "Light"];
+        for(i=0; i < semElements.length; i++)
+        {
+            var z = document.createElement("option");
+            z.setAttribute("value", styleElements[i]);
+            var t = document.createTextNode(styleElements[i]);
+            z.appendChild(t);
+            selector2.appendChild(z);
+        }
     }
 
     //Add nav elements
@@ -85,6 +87,15 @@ window.onload = function() {
         article.appendChild(articleText);
     }
 
+    // Add section 1
+    var section = createModdableElement('section');
+    var sectionP1 = document.createElement('p');
+    var sectionP1Text = document.createTextNode("This is a new section!");
+    section.appendChild(sectionP1);
+    sectionP1.appendChild(sectionP1Text);
+    article.appendChild(section);
+
+    // Add section 2
     var section = createModdableElement('section');
     var sectionP1 = document.createElement('p');
     var sectionP1Text = document.createTextNode("This is a new section!");
@@ -102,6 +113,9 @@ window.onload = function() {
     footer.appendChild(footerImg);
 
     /// ADDING CLASSES
+
+    // got.author.name == JRRMRNTS martin
+
     class Book
     {
         constructor(author, genre, publisher, language, numberOfPages, productSize, isbn, edition)
@@ -125,5 +139,7 @@ window.onload = function() {
             this.nationality = nationality;
         }
     }
+
+    document.onload = loadSelectors();
 
 }
