@@ -1,0 +1,350 @@
+
+@font-face 
+{
+  font-family: gotFont;
+  src: url("game_of_thrones_font.ttf");
+}
+
+/* Stylesheet for Mobile: screen-width < 750 pixels. All styles simplified.
+ Some images made unavailable */
+@media only screen and (max-width: 750px)
+{ 
+  header
+  { 
+    font-family: gotFont;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  nav
+  { 
+    display: table-row-group;
+    background-color: rgba(175, 111, 86, 0.411);
+    padding: 5px;
+  }
+
+  nav a
+  {
+    text-decoration: underline;
+    text-align: center;
+    font-size: 8vw;
+    text-decoration: none;
+    color: black;
+  }
+
+  nav a.current
+  {
+    background-color: rgba(121, 53, 28, 0.411);
+  }
+
+  h2
+  {
+    font-family: gotFont;
+
+  }
+
+  body
+  {
+    margin:0px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: url("images/backimage1.jpg");
+    background-position: right; 
+    background-color: #F8F4CE;            
+  }
+
+  article.text
+  {
+    width: 90%;
+    padding: 5%;
+    background-color: rgba(248, 244, 206, 0.466);
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px
+  }
+
+  body.home div
+  {
+    overflow-x: auto;
+  }
+
+  body.characters section img
+  {
+    height: auto;
+    width: 40vw;
+    float: left;
+    padding: 1%;
+  }
+
+  body.characters section p
+  {
+    clear: both;
+  }
+
+  body.author article img
+  {
+    width: 80vw;
+  }
+
+  body.world article img
+  {
+    padding: 2%;
+    float: left;
+    height: auto;
+    width: 90vw;
+  }
+
+  footer
+  {
+    background-color: #AF6F56;
+  }
+
+  footer img
+  {
+    float: right;
+    width: 60%;
+    position: relative;
+  }
+
+}
+
+
+/* Stylesheet for Desktop: screen-width > 750 pixels*/
+@media only screen and (min-width: 750px)
+{
+/*~~~~~~~
+~~~ FONTS ~~
+~~~~~~~~*/
+  h1
+  {
+    font-family: gotFont;
+    font-size: 30px;
+  }
+
+  h2
+  {
+    font-family: gotFont;
+  }
+
+
+
+/*~~~~~~~
+~~ HEADER ~~~
+~~~~~~~~*/
+  header
+  {
+    position: relative;
+    font-family: gotFont; 
+    padding: 20px;
+    padding-left: 60px;
+  }
+
+
+/*~~~~~~~
+~~ NAVIGATION ~~~
+~~~~~~~~*/
+  nav
+  {
+    position: relative;
+    margin-bottom: 100px;
+  }
+
+  nav a
+  {
+    text-decoration: none;
+    float: left;
+    text-align: center;
+    width: 16.6%;
+    font-size: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: rgba(175, 111, 86, 0.411);
+    color: black;
+  }
+
+  nav a:hover
+  {
+    background-color: rgb(129, 82, 63, 0.411);
+  }
+
+
+  nav a.current
+  {
+    background-color: rgba(121, 53, 28, 0.411);
+  }
+
+
+/*~~~~~~~
+~~~ BODY ~~~~
+~~~~~~~~*/
+body
+{
+	margin:0px;
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body.home
+{
+    background-image: url("images/backimage1.jpg");
+    background-position: right; 
+    background-color: #F8F4CE;            
+}
+body.plot
+{
+    background-image: url("images/backimage2.jpg");
+    background-position: right -300px center;
+    background-color: #EBE5AB;            
+}
+body.characters
+{
+    background-image: url("images/backimage3.jpg");
+    background-position: left; 
+    background-color: #ECC371; 
+    height: 100%;           
+}
+body.world
+{
+    background-image: url("images/backimage5.jpg");
+    background-position: right; 
+    background-color: #EDEAB3;           
+}
+body.author
+{
+    background-image: url("images/backimage4.jpg");
+    background-position: right -300px center;
+    background-color: #F8F4CE;  
+}
+
+
+/*~~~~~~~
+~~ ARTICLES ~~
+~~~~~~~~*/
+article.text
+{
+  position: relative;
+  width: 83%;
+  margin: 0 auto;
+  padding-top: 40px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  background-color: rgba(248, 244, 206, 0.466);
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px
+}
+
+/*~~~~~~~
+~~~ WORLD ~~~
+~~~~~~~~*/
+/* This is for splitting up the list of regions into columns (world page) */
+body.world ol
+{
+ -webkit-column-count: 4;
+ -moz-column-count: 4;
+ -o-column-count: 4;
+  column-count: 4; 
+} 
+
+body.world a
+{
+    color:black;
+}
+
+
+.locationBox:nth-of-type(odd)
+{
+	background-color: rgba(128, 128, 128, 0.459)
+}
+
+/*~~~~~~~
+~~ CHARACTERS ~~~
+~~~~~~~~*/
+section.characters
+{
+	height: auto;
+	vertical-align: top;
+	display: grid;
+	grid-gap: 180px;
+  grid-row-gap: 100px;
+  grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) );
+  font-size: 20px;
+}
+
+section.characters img
+{
+  float: left;
+  margin-right: 20px;
+  width: 180px;
+  height: 277px;
+}
+
+section.characters p
+{
+  text-align: left;
+  max-height: 277px;
+  width: 450px;
+
+}
+
+#author img
+{
+    float: right;
+    width: 326.7px;
+    height: 405.3px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+
+/*~~~~~~
+~~ FOOTER ~~
+~~~~~~~~*/
+footer
+{   margin:0px;
+    clear: both;        
+    background-color: #AF6F56;
+    position: relative;
+    height: 100%;
+    width: auto;
+    padding: 10px;
+    border: 2px solid #342528;
+}
+
+footer img
+{
+	position: relative;
+	float: right;
+  width: 337px;
+  height: 133px;
+}
+
+/*~~~~~~
+~~ IMAGES ~~
+~~~~~~~~*/
+
+body.world article img
+{
+    max-width: 100%;
+    height: auto;
+    width: 1350px;
+    height: 900px;
+}
+
+
+body.home table{
+	width:83%;
+	height:100px;
+    border-collapse: collapse;
+    font-size: 80%;
+    position: relative;
+}
+
+body.home th, td{
+	padding: 10px;
+	text-align: left ;
+	border: 1px solid black;
+	
+}
+}
