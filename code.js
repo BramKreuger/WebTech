@@ -26,11 +26,17 @@ window.onload = function() {
     heading.appendChild(headingText);
     header.appendChild(heading);    
 
+    var output = document.createElement("p");
+    output.setAttribute("id", ".out");
+    output.textContent = "You selected: nothing" ;
+    header.appendChild(output);
+
     function loadSelectors()
     {
         //Add the selector for the elements to the header
         var selector1 = document.createElement("SELECT");
         selector1.setAttribute("id", "mySelect1");
+        selector1.onchange = function() {changeSelector1()};
         header.appendChild(selector1);
         
         var temp = document.getElementsByClassName("moddable");
@@ -42,11 +48,16 @@ window.onload = function() {
         for(i=0; i < semElements.length; i++)
         {
             var z = document.createElement("option");
-            z.setAttribute("value", semElements[i]);
+            var x = z.setAttribute("value", semElements[i]);
             var t = document.createTextNode(semElements[i]);
             z.appendChild(t);
-            selector1.appendChild(z);
-        }
+            selector1.appendChild(z);            
+        }       
+
+        function changeSelector1() {
+            var x = document.getElementById("mySelect1").value;
+            document.getElementById(".out").innerHTML = "You selected: " + x;
+          }
 
         //Add the selector for the styles to the header
         var selector2 = document.createElement("SELECT");
