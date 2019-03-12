@@ -1,93 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script>
-        /// FIRST PART ADDING BASIC HTML/STYLE
-
-        // run this function when the document is loaded
-        window.onload = function() {
-
-        //Add styleSheet
-        var sheet = document.createElement('link');
-        sheet.setAttribute('href', 'style/main.css');
-        sheet.setAttribute('rel', "stylesheet");
-        sheet.setAttribute('type', "text/css");
-        document.body.append(sheet)
-
-        document.body.classList.add("home");
-
-        // Add header
-        var header = document.getElementById('myHeader');
-        var heading = document.createElement("h1");
-        var headingText = document.createTextNode("Game of Thrones");
-        heading.appendChild(headingText);
-        header.appendChild(heading);
-
-        //Add nav elements
-        var nav = document.getElementById('myNav');
-        var links = ["Home", "Plot", "Characters", "World", "Author"];
-        for(i=0; i < 5; i++) {
-            var navLink = document.createElement("a");
-            var navLinkText = document.createTextNode(links[i]);
-            navLink.setAttribute('href', links[i].charAt(0).toLowerCase() + links[i].slice(1) + ".html");
-            navLink.append(navLinkText);
-            nav.appendChild(navLink);
-        }
-        
-        //Add Article
-        var article =  document.getElementById('myArticle');
-        var articleTitle = document.createElement('h2');
-        articleTitle.textContent = "Info";
-        article.appendChild(articleTitle);
-        var articlePar = document.createElement("p");
-        for(i=0; i<50; i++)
-        {
-            var articleText = document.createTextNode("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a mi vitae velit ullamcorper posuere. Maecenas blandit felis a neque rutrum ")
-            article.appendChild(articleText);
-        }
-
-        //Add footer
-        var footer =  document.getElementById('myFooter');
-        var footerImg = document.createElement('img');
-        var footerText = document.createTextNode("Created by: Daniël Bezema, Bram Kreuger en Nikki Evers. \n University Utrecht \n Webtechnology \n INFOB2WT ");
-        footerImg.setAttribute('src', "style/images/utrecht_university_english_logo_transparent.png");
-        footerImg.setAttribute('alt', 'Image of Utrecht university logo');
-        footer.appendChild(footerText);
-        footer.appendChild(footerImg);
-
-        /// ADDING CLASSES
-        class Book
-        {
-            constructor(author, genre, publisher, language, numberOfPages, productSize, isbn, edition)
-            {
-                this.author = author;
-                this.genre = genre;
-                this.publisher = publisher;
-                this.language = language;
-                this.numberOfPages = numberOfPages;
-                this.productSize = productSize;
-                this.isbn = isbn
-                this.edition = edition;
-            }
-        }
-        class Author
-        {
-            constructor(name, dateOfBirth, placeOfBirth, nationality)
-            {
-                this.name = name;
-                this.dateOfBirth = dateOfBirth;
-                this.placeOfBirth = placeOfBirth;
-                this.nationality = nationality;
-            }
-        }
-        
-      }
-    </script>
+    <script src="code.js"></script>
   </head>
   <body>
-      <header id="myHeader"></header>
-      <nav id="myNav"></nav>
-      <article id="myArticle" class="text"></article>
-      <footer id="myFooter"></footer>
+      <header class="moddable"></header>      
+      <nav class="moddable"></nav>
+      <article class="moddable" class="text"></article>
+      <footer class="moddable"></footer>
   </body>
 </html>
