@@ -224,7 +224,7 @@ window.onload = function()
         selector2.onchange = function() {changeSelector2()};
 
         var selectedFontSize = 30;
-        var fontList = ["xx-small", "x-small", "small", "medium", "large", "x-large", "xx-large"];
+        var fontList = ["nothing", "xx-small", "x-small", "small", "medium", "large", "x-large", "xx-large"];
         for (i=0; i< fontList.length;i++) 
         {
             var o = document.createElement('option');
@@ -245,7 +245,7 @@ window.onload = function()
         selector3.onchange = function() {changeSelector3()};
 
         var selectedColor;
-        var colorList = ['blue','red','green','white'];
+        var colorList = ["nothing",'blue','red','green','white'];
         for (i=0; i< colorList.length;i++) 
         {
             var o = document.createElement('option');
@@ -265,7 +265,7 @@ window.onload = function()
         selector4.onchange = function() {changeSelector4()};
 
         var selectedBackColor;
-        var backgroundList = ['blue','red','green','black'];
+        var backgroundList = ["nothing",'blue','red','green','black'];
         for (i=0; i< backgroundList.length;i++) 
         {
             var o = document.createElement('option');
@@ -288,18 +288,18 @@ window.onload = function()
             selectedElementID = selector1.value;
         }
 
-        var selectedFontSize = "medium";
+        var selectedFontSize = "nothing";
         function changeSelector2()
         {
             selectedFontSize = selector2.value;
         }
-        var selectedColor = "blue";
+        var selectedColor = "nothing";
         function changeSelector3()
         {
             selectedColor = selector3.value;
         }
 
-        var selectedBackColor = "blue";
+        var selectedBackColor = "nothing";
         function changeSelector4()
         {
             selectedBackColor = selector4.value;
@@ -307,20 +307,26 @@ window.onload = function()
 
         function styleChange()
         {       
-            e = semElements[selectedElementID];          
-            e.style.color = selectedColor;
-            e.style.backgroundColor = selectedBackColor;
-            e.style.fontSize = selectedFontSize;
+            e = semElements[selectedElementID];  
+            if(selectedColor != "nothing")        
+                e.style.color = selectedColor;
+            if(selectedBackColor != "nothing")    
+                e.style.backgroundColor = selectedBackColor;
+            if(selectedFontSize != "nothing")    
+                e.style.fontSize = selectedFontSize;
             
             childeren = semElements[selectedElementID].children
             for(i=0; i < childeren.length; i++)
             {
-                childeren[i].style.color = selectedColor;
-                childeren[i].style.fontSize = selectedFontSize;
-                childeren[i].style.backgroundColor = selectedBackColor;
+                if(selectedColor != "nothing")     
+                    childeren[i].style.color = selectedColor;
+                if(selectedBackColor != "nothing")  
+                    childeren[i].style.fontSize = selectedFontSize;
+                if(selectedFontSize != "nothing")    
+                    childeren[i].style.backgroundColor = selectedBackColor;
             }   
 
-            if(e.tagName == "BODY")
+            if(e.tagName == "BODY" && selectedBackColor != "nothing")
             {
                 e.classList.remove(e.className);
             }        
