@@ -7,7 +7,7 @@
 
 /* Stylesheet for Mobile: screen-width < 750 pixels. All styles simplified.
  Some images made unavailable */
-@media only screen and (max-width: 750px)
+@media only screen and (max-width: 420px)
 { 
   header
   { 
@@ -19,6 +19,7 @@
   nav
   { 
     display: table-row-group;
+    float:left;
     background-color: rgba(175, 111, 86, 0.411);
     padding: 5px;
   }
@@ -27,7 +28,7 @@
   {
     text-decoration: underline;
     text-align: center;
-    font-size: 8vw;
+    font-size: 5vw;
     text-decoration: none;
     color: black;
   }
@@ -48,7 +49,7 @@
     margin:0px;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-image: url("images/backimage1.jpg");
+    background-image: url("images/background/backimage1.jpg");
     background-position: right; 
     background-color: #F8F4CE;            
   }
@@ -110,7 +111,7 @@
 
 
 /* Stylesheet for Desktop: screen-width > 750 pixels*/
-@media only screen and (min-width: 750px)
+@media only screen and (min-width: 420px)
 {
 /*~~~~~~~
 ~~~ FONTS ~~
@@ -154,7 +155,7 @@
     text-decoration: none;
     float: left;
     text-align: center;
-    width: 16.66%;
+    width: 16.6%;
     font-size: 20px;
     padding-top: 15px;
     padding-bottom: 15px;
@@ -185,32 +186,32 @@ body
 }
 body.home
 {
-    background-image: url("images/backimage1.jpg");
+    background-image: url("images/background/backimage1.jpg");
     background-position: right; 
     background-color: #F8F4CE;            
 }
 body.plot
 {
-    background-image: url("images/backimage2.jpg");
+    background-image: url("images/background/backimage2.jpg");
     background-position: right -300px center;
     background-color: #EBE5AB;            
 }
 body.characters
 {
-    background-image: url("images/backimage3.jpg");
+    background-image: url("images/background/backimage3.jpg");
     background-position: left; 
     background-color: #ECC371; 
     height: 100%;           
 }
 body.world
 {
-    background-image: url("images/backimage5.jpg");
+    background-image: url("images/background/backimage5.jpg");
     background-position: right; 
     background-color: #EDEAB3;           
 }
 body.author
 {
-    background-image: url("images/backimage4.jpg");
+    background-image: url("images/background/backimage4.jpg");
     background-position: right -300px center;
     background-color: #F8F4CE;  
 }
@@ -224,10 +225,10 @@ article.text
   position: relative;
   width: 83%;
   margin: 0 auto;
-  padding-top: 40px;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-bottom: 40px;
+  padding-top: 5%;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-bottom: 5%;
   margin-bottom: 40px;
   background-color: rgba(248, 244, 206, 0.466);
   text-align: left;
@@ -347,26 +348,4 @@ body.home th, td{
 	border: 1px solid black;
 	
 }
-
-/*~~~~~~~~~~~~~~~
-~~ SELECTOR MENU ~~
-~~~~~~~~~~~~~~~~~*/
-select
-{
-  background-color: rgba(175, 111, 86, 0.637);
-  border: none;
-  height: 40px;
-  margin: 5px; 
-}
-#selectorButton
-{
-  background-color: rgba(175, 111, 86, 0.637);
-  border: none;
-  height: 40px;
-  margin: 5px; 
-}
-#selectorButton:hover
-  {
-    background-color: rgb(129, 82, 63, 0.637);
-  }
 }
