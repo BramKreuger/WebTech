@@ -213,8 +213,9 @@ window.onload = function()
         optgroup1.setAttribute('label', 'Element')
         menu.append(selector1);
         selector1.appendChild(optgroup1);
-        selector1.onchange = function() {changeSelector1()};
-        
+        //selector1.change = function() {changeSelector1()};
+        selector1.addEventListener("change", changeSelector1);
+
         // find all existing modifiable elements on current page        
         var semElements = document.querySelectorAll('body,nav,header,footer,aside,article,section');
 
@@ -234,7 +235,7 @@ window.onload = function()
         optgroup2.setAttribute('label', 'Fontsize')
         menu.appendChild(selector2);
         selector2.appendChild(optgroup2);
-        selector2.onchange = function() {changeSelector2()};
+        selector2.addEventListener("change", changeSelector2);
 
         var selectedFontSize = 30;
         var fontList = ["nothing", "xx-small", "x-small", "small", "medium", "large", "x-large", "xx-large"];
@@ -255,7 +256,7 @@ window.onload = function()
         optgroup3.setAttribute('label', 'Color')
         menu.appendChild(selector3);
         selector3.appendChild(optgroup3);
-        selector3.onchange = function() {changeSelector3()};
+        selector3.addEventListener("change", changeSelector3);
 
         var selectedColor;
         var colorList = ["nothing",'blue','red','green','white'];
@@ -275,7 +276,7 @@ window.onload = function()
         optgroup4.setAttribute('label', 'Backcolor')
         menu.appendChild(selector4);
         selector4.appendChild(optgroup4);
-        selector4.onchange = function() {changeSelector4()};
+        selector4.addEventListener("change", changeSelector4);
 
         var selectedBackColor;
         var backgroundList = ["nothing",'blue','red','green','black'];
@@ -292,13 +293,14 @@ window.onload = function()
         var styleButton = document.createElement("button");
         styleButton.textContent = "Change style";
         styleButton.setAttribute("id", "selectorButton");
-        styleButton.onclick = function() {styleChange()};
+        styleButton.addEventListener("click", styleChange);
         menu.appendChild(styleButton);
 
         var selectedElementID = 0;
         function changeSelector1()
         {
             selectedElementID = selector1.value;
+            console.log(selectedElementID)
         }
 
         var selectedFontSize = "nothing";
@@ -348,7 +350,7 @@ window.onload = function()
         var reloadButton = document.createElement("button");
         reloadButton.setAttribute("id", "selectorButton");
         reloadButton.textContent = "Reset";
-        reloadButton.onclick = function() {location.reload()};
+        reloadButton.addEventListener("click", function(){location.reload()});
         menu.appendChild(reloadButton);
     }
 
