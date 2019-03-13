@@ -4,8 +4,7 @@
 // run this function when the document is loaded
 window.onload = function() 
 {
-	
-    //dynamically create the elements and content for info.html page
+	//dynamically create the elements and content for info.html page
     if (document.body.className == 'info')
     {
     	 function createModdableElement(name)
@@ -16,11 +15,12 @@ window.onload = function()
     	}
 
 		//Add styleSheet
+        var head = document.head;
 		var sheet = document.createElement('link');
 		sheet.setAttribute('href', 'style/main.css');
 		sheet.setAttribute('rel', "stylesheet");
 		sheet.setAttribute('type', "text/css");
-		document.body.append(sheet)
+		document.head.append(sheet)
 
 		document.body.classList.add("home");
 
@@ -31,13 +31,12 @@ window.onload = function()
     	heading.appendChild(headingText);
     	header.appendChild(heading);
 
-
-    
-    	//Add Article
+    	//Add Article and sections
     	var article = document.getElementsByTagName('article')[0];
     	var articleTitle = document.createElement('h2');
     	articleTitle.textContent = "Info";
     	article.appendChild(articleTitle);
+    	article.setAttribute('class', 'text');
     	var articlePar = document.createElement("p");
     	for(i=0; i<50; i++)
     	{
@@ -88,6 +87,7 @@ window.onload = function()
 
 
 	} 
+
 	//dynamically add the navigation bar for all pages
     var nav = document.getElementsByTagName('nav')[0];
     var links = ["Home", "Plot", "Characters", "World", "Author", "Info"];
@@ -107,43 +107,104 @@ window.onload = function()
         }
     }
 
+
+    // create necessary elements for a menu
     var header = document.getElementsByTagName('header')[0];
+    var menu = document.createElement('div');
+    var label = document.createElement('label');
+    var labelText = document.createTextNode('Modify appearance for this site:');
 
-    //Add the selector for the elements to the header
-    	var selector1 = document.createElement("SELECT");
-    	selector1.setAttribute("id", "mySelect1");
-    	header.appendChild(selector1);
-    
-    	temp = document.getElementsByClassName("moddable");
-    	var semElements = [temp.length];
-    	console.log(temp);
-    	console.log(semElements);
-    	for(i=0; i < temp.length; i++)
-        	semElements[i] = temp[i].localName;
 
-   		for(i=0; i < semElements.length; i++)
-    	{
-        	var z = document.createElement("option");
-        	z.setAttribute("value", semElements[i]);
-        	var t = document.createTextNode(semElements[i]);
-        	z.appendChild(t);
-        	selector1.appendChild(z);
-    	}
+    menu.setAttribute('id','menu');
+    label.setAttribute('for', 'menu');
+    header.appendChild(menu);
+    menu.appendChild(labelText);
 
-    	//Add the selector for the styles to the header
-    	var selector2 = document.createElement("SELECT");
-    	selector2.setAttribute("id", "mySelect");
-    	header.appendChild(selector2);
-    
-    	var styleElements = ["Dark", "Blue", "Light", "Craycray"];
-    	for(i=0; i < semElements.length; i++)
-    	{
-        	var z = document.createElement("option");
-        	z.setAttribute("value", styleElements[i]);
-        	var t = document.createTextNode(styleElements[i]);
-        	z.appendChild(t);
-        	selector2.appendChild(z);
-    	}
+	// find all existing modifiable elements on current page    	
+    var allowedList = ['header','footer','body','article','section','aside'];
+    var pageList = [];
+    for (i = 0; i < allowedList.length; i++)
+    {
+        var elementList = document.getElementsByTagName(allowedList[i])[0];
+    	if (elementList !== undefined)
+        {
+            pageList.push(allowedList[i]);
 
+        }
+    }
+
+    // add select for modifiable elements 
+    var selector1 = document.createElement('select');
+    var optgroup1 = document.createElement('optgroup');
+
+    optgroup1.setAttribute('label', 'Element')
+    menu.append(selector1);
+    selector1.appendChild(optgroup1);
+
+    for (i=0; i< pageList.length;i++) 
+    {
+        var o = document.createElement('option');
+        o.setAttribute("value", pageList[i]);
+        var t = document.createTextNode(pageList[i]);
+        o.appendChild(t);
+        optgroup1.appendChild(o);
+
+    }
+
+    // add select for fontsize
+    var selector2 = document.createElement('select');
+    var optgroup2 = document.createElement('optgroup');
+
+    optgroup2.setAttribute('label', 'Fontsize')
+    menu.appendChild(selector2);
+    selector2.appendChild(optgroup2);
+
+    var fontList = ['default','30','40','50','60'];
+    for (i=0; i< fontList.length;i++) 
+    {
+        var o = document.createElement('option');
+        o.setAttribute("value", fontList[i]);
+        var t = document.createTextNode(fontList[i]);
+        o.appendChild(t);
+        optgroup2.appendChild(o);
+
+    }
+
+    // add select for color
+    var selector3 = document.createElement('select');
+    var optgroup3 = document.createElement('optgroup');
+
+    optgroup3.setAttribute('label', 'Color')
+    menu.appendChild(selector3);
+    selector3.appendChild(optgroup3);
+
+    var colorList = ['default','blue','red','green','white'];
+    for (i=0; i< colorList.length;i++) 
+    {
+        var o = document.createElement('option');
+        o.setAttribute("value", colorList[i]);
+        var t = document.createTextNode(colorList[i]);
+        o.appendChild(t);
+        optgroup3.appendChild(o);
+
+    }
+    // add select for background
+    var selector4 = document.createElement('select');
+    var optgroup4 = document.createElement('optgroup');
+
+    optgroup4.setAttribute('label', 'Fontsize')
+    menu.appendChild(selector4);
+    selector4.appendChild(optgroup4);
+
+    var backgroundList = ['default','blue','red','green','black'];
+    for (i=0; i< backgroundList.length;i++) 
+    {
+        var o = document.createElement('option');
+        o.setAttribute("value", backgroundList[i]);
+        var t = document.createTextNode(backgroundList[i]);
+        o.appendChild(t);
+        optgroup4.appendChild(o);
+
+    }
 
 }
