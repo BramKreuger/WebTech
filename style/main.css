@@ -347,4 +347,26 @@ body.home th, td{
 	border: 1px solid black;
 	
 }
+
+/*~~~~~~~~~~~~~~~
+~~ SELECTOR MENU ~~
+~~~~~~~~~~~~~~~~~*/
+select
+{
+  background-color: rgba(175, 111, 86, 0.411);
+  border: none;
+  height: 40px;
+  margin: 5px; 
+}
+#selectorButton
+{
+  background-color: rgba(175, 111, 86, 0.411);
+  border: none;
+  height: 40px;
+  margin: 5px; 
+}
+#selectorButton:hover
+  {
+    background-color: rgb(129, 82, 63, 0.411);
+  }
 }

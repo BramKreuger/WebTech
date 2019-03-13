@@ -205,6 +205,7 @@ window.onload = function()
 
     var styleButton = document.createElement("button");
     styleButton.textContent = "Change style";
+    styleButton.setAttribute("id", "selectorButton");
     styleButton.onclick = function() {styleChange()};
     menu.appendChild(styleButton);
 
@@ -245,11 +246,17 @@ window.onload = function()
             childeren[i].style.fontSize = selectedFontSize;
             childeren[i].style.backgroundColor = selectedBackColor;
         }   
-        
-        if(e.className == "home")
+
+        if(e.tagName == "BODY")
         {
-            e.classList.remove("home");
-        }
+            e.classList.remove(e.className);
+        }        
     }
+
+    var reloadButton = document.createElement("button");
+    reloadButton.setAttribute("id", "selectorButton");
+    reloadButton.textContent = "Reset";
+    reloadButton.onclick = function() {location.reload()};
+    menu.appendChild(reloadButton);
 
 }
