@@ -4,6 +4,55 @@
 // run this function when the document is loaded
 window.onload = function() 
 {
+
+    /// ADDING CLASSES
+    class bookSeries
+    {
+        constructor(title, author, genre, publisher, language)
+        {
+            this.title = title;
+            this.author = author;
+            this.genre = genre;
+            this.publisher = publisher;
+            this.language = language;
+        }
+    }
+
+    class book extends bookSeries
+    {
+        constructor(author, genre, publisher, language, title, numberOfPages, isbn, edition)
+        {
+            super(author, genre, publisher, language);
+            this.title = title;
+            this.numberOfPages = numberOfPages;
+            this.isbn = isbn
+            this.edition = edition;
+        }
+    };
+    
+    class author
+    {
+        constructor(name, dateOfBirth, placeOfBirth, nationality)
+        {
+            this.name = name;
+            this.dateOfBirth = dateOfBirth;
+            this.placeOfBirth = placeOfBirth;
+            this.nationality = nationality;
+        }
+        
+    }
+    
+    class publisher
+    {
+        constructor(name, location, since)
+        {
+            this.name = name;
+            this.location = location;
+            this.since = since;
+        }
+
+    }
+
 	//dynamically create the elements and content for info.html page
     if (document.body.className == 'info')
     {
@@ -32,25 +81,67 @@ window.onload = function()
     	header.appendChild(heading);
 
     	//Add Article and sections
+        var gotPublisher = new publisher("Bantam Books", "New York city, United States", "1945");
+        var gotAuthor = new author("George R. R. Martin", "20th of september 1948", "Bayonne, New Jersey, United States", "American");
+        var gotSeries = new bookSeries("A Song of Ice and Fire", gotAuthor.name, "fantasy", gotPublisher.name, "English");
+        var gotBook = new book(gotAuthor.name, gotSeries.genre, gotSeries.publisher.name, gotSeries.language, "A Game of Thrones", "694", "0553103547", "1st" );
+
+        //Add Article
+        
     	var article = document.getElementsByTagName('article')[0];
     	var articleTitle = document.createElement('h2');
     	articleTitle.textContent = "Info";
-    	article.appendChild(articleTitle);
+        article.appendChild(articleTitle);        
     	article.setAttribute('class', 'text');
-    	var articlePar = document.createElement("p");
-    	for(i=0; i<50; i++)
-    	{
-        	var articleText = document.createTextNode("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a mi vitae velit ullamcorper posuere. Maecenas blandit felis a neque rutrum ")
-        	article.appendChild(articleText);
-    	}
+        var articleText = document.createTextNode("This is a website about the bookseries " + gotSeries.title + ". This series now has a total of five books; the first book that came out was " + gotBook.title + ".");
+        article.appendChild(articleText);
 
-    	var section = createModdableElement('section');
-    	var sectionP1 = document.createElement('p');
-    	var sectionP1Text = document.createTextNode("This is a new section!");
-    	section.appendChild(sectionP1);
-    	sectionP1.appendChild(sectionP1Text);
-    	article.appendChild(section);
+        //Add Section
+        var lijn = document.createElement('hr');
+        article.appendChild(lijn);
+        var section = createModdableElement('section');
+        var sectionTitle = document.createElement('h3');
+        sectionTitle.textContent = "Short Overview";
+        section.appendChild(sectionTitle);
 
+        //First paragraph
+        var sectionP1 = document.createElement('p');
+    	var sectionP1Text = document.createTextNode("A Game of Thrones takes place over the course of one year on or near the fictional continent of Westeros. The story begins when King Robert visits the northern castle Winterfell to ask Ned Stark to be his right-hand assistant, or Hand of the King. The previous Hand, Jon Arryn, died under suspicious circumstances. Robert comes with his queen, Cersei Lannister, and his retinue, which includes a number of Lannisters. Just after the royal party arrives, Ned’s wife, Catelyn, receives a message claiming that the Lannister family was responsible for the death of the former Hand. ");
+        section.appendChild(sectionP1);
+        sectionP1.appendChild(sectionP1Text);
+        article.appendChild(section);
+
+        //Add link to plot overview
+        var plotLink = document.createElement('a');
+        var plotLinkText= document.createTextNode('Want to read more?');    
+        plotLink.setAttribute('href', 'plot.html');
+        plotLink.appendChild(plotLinkText);
+        sectionP1.appendChild(plotLink);
+        
+        var lijn1 = document.createElement('hr');
+        sectionP1.appendChild(lijn1);
+
+        //Second paragraph
+        var sectionP2Title = document.createElement('h3');
+        sectionP2Title.textContent = "The Author";
+        var sectionP2 = document.createElement('p');
+    	var sectionP2Text = document.createTextNode("The author of the bookseries " + gotSeries.title + " is " + gotAuthor); //". He was born in " + gotAuthor.placeOfBirth " in " + gotAuthor.dateOfBirth ".");
+        section.appendChild(sectionP2Title);
+        section.appendChild(sectionP2);
+        sectionP2.appendChild(sectionP2Text);
+
+        var lijn2 = document.createElement('hr');
+        sectionP2.appendChild(lijn2);
+
+        //Third paragraph
+        var sectionP2Title = document.createElement('h3');
+        sectionP2Title.textContent = "Book Details";
+        var sectionP2 = document.createElement('p');
+        var sectionP2Text = document.createTextNode("hoi");
+        section.appendChild(sectionP2Title);
+        section.appendChild(sectionP2);
+        sectionP2.appendChild(sectionP2Text);
+        
     	//Add footer
     	var footer =  document.getElementsByTagName('footer')[0];
     	var footerImg = document.createElement('img');
@@ -60,31 +151,7 @@ window.onload = function()
     	footer.appendChild(footerText);
     	footer.appendChild(footerImg);
 
-    	/// ADDING CLASSES
-    	class Book
-    	{
-        	constructor(author, genre, publisher, language, numberOfPages, productSize, isbn, edition)
-        	{
-            	this.author = author;
-            	this.genre = genre;
-            	this.language = language;
-            	this.numberOfPages = numberOfPages;
-            	this.productSize = productSize;
-            	this.isbn = isbn
-            	this.edition = edition;
-        	}
-    	}
-    	class Author
-    	{
-        	constructor(name, dateOfBirth, placeOfBirth, nationality)
-        	{
-            	this.name = name;
-            	this.dateOfBirth = dateOfBirth;
-            	this.placeOfBirth = placeOfBirth;
-            	this.nationality = nationality;
-        	}
-		}
-
+    	
 
 	} 
 
