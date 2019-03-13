@@ -69,6 +69,19 @@ window.onload = function()
         sheet.setAttribute('type', "text/css");
         document.head.append(sheet)
 
+        //Add metaData
+        var meta1 = document.createElement("meta");
+        var meta2 = document.createElement("meta");
+        var meta3 = document.createElement("meta");
+        var meta4 = document.createElement("meta");
+        meta1.setAttribute("name","viewport");
+        meta1.setAttribute("content", "width=device-width, initial-scale=1.0");
+        meta2.setAttribute("charset", "utf-8");
+        meta3.setAttribute("name", "description");
+        meta3.setAttribute("content", "A Game of Thrones information page where you can find all kinds of information on the first book in the book series 'A Song of Ice and Fire' written by George R. R. Martin. This site includes information about A Game of Thrones characters and a plot overview of the book. This site also includes a map with information about regions that lay on the three main continents where the story of A Game of Thrones takes place. You can also learn more about the author of the book George R R Martin as well as the authors of this site.");
+        meta4.setAttribute("name", "keywords");
+        meta4.setAttribute("content", "Game of Thrones book plot overview summary characters Daenarys Targaryon Rob Sansa Stark Ned Stark Arya Jon Snow Tyrion Lannister Jaime The Wall North Westeros Essos Sothorosys King's landing Dragons fire A song of Ice and Fire series George R R Martin winter is coming The Seven Kingdoms fantasy novel");
+
         document.body.classList.add("home");
 
         // Add header
