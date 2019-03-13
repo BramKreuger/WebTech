@@ -82,6 +82,7 @@ window.onload = function()
         meta4.setAttribute("name", "keywords");
         meta4.setAttribute("content", "Game of Thrones book plot overview summary characters Daenarys Targaryon Rob Sansa Stark Ned Stark Arya Jon Snow Tyrion Lannister Jaime The Wall North Westeros Essos Sothorosys King's landing Dragons fire A song of Ice and Fire series George R R Martin winter is coming The Seven Kingdoms fantasy novel");
 
+        // Add class home to body
         document.body.classList.add("home");
 
         // Add header
@@ -152,18 +153,52 @@ window.onload = function()
         section.appendChild(sectionP2Title);
         section.appendChild(sectionP2);
         sectionP2.appendChild(sectionP2Text);
-        
+
+        //stuff for eventpropagation
+        var propInText = document.createElement("p");
+        propInText.textContent = "Zoals je kan zien vind hier eventpropagation plaats. Ookal klik je op het diepste vlak, toch worden alle vlakken aangeroepen";
+        section.appendChild(propInText);
+
+        //Add three blocks for illustrating eventpropagation
+        var block1 = document.createElement("div");
+        var block2 = document.createElement("div");
+        var block3 = document.createElement("div");
+        block1.setAttribute("id", "block1");
+        block1.addEventListener("click", c1);
+        block2.setAttribute("id", "block2");
+        block2.addEventListener("click", c2);
+        block3.setAttribute("id", "block3");
+        block3.addEventListener("click", c3);
+        section.appendChild(block1);
+        block1.appendChild(block2);
+        block2.appendChild(block3);
+
+        var propText = document.createElement("p");
+        propText.textContent = "Propegationtext!";
+        section.appendChild(propText);
+
+        //The functions for the evenpropagation
+        function c1()
+        {
+            propText.textContent = "Outside!";
+        }
+        function c2()
+        {
+            propText.textContent = "Midde!";
+        }
+        function c3()
+        {
+            propText.textContent = "Inside!";
+        }
+
         //Add footer
         var footer =  document.getElementsByTagName('footer')[0];
         var footerImg = document.createElement('img');
         var footerText = document.createTextNode("Created by: Daniël Bezema, Bram Kreuger en Nikki Evers. \n University Utrecht \n Webtechnology \n INFOB2WT ");
-        footerImg.setAttribute('src', "style/images/utrecht_university_english_logo_transparent.png");
+        footerImg.setAttribute('src', "images/logos/utrecht_university_english_logo_transparent.png");
         footerImg.setAttribute('alt', 'Image of Utrecht university logo');
         footer.appendChild(footerText);
-        footer.appendChild(footerImg);
-
-        
-
+        footer.appendChild(footerImg);   
     } 
 
 
@@ -290,6 +325,7 @@ window.onload = function()
 
         }
 
+        //When this button is pressed the style changes
         var styleButton = document.createElement("button");
         styleButton.textContent = "Change style";
         styleButton.setAttribute("id", "selectorButton");
@@ -320,6 +356,7 @@ window.onload = function()
             selectedBackColor = selector4.value;
         }
 
+        //Change the style according to the inputvalues
         function styleChange()
         {       
             e = semElements[selectedElementID];  
@@ -330,6 +367,7 @@ window.onload = function()
             if(selectedFontSize != "nothing")    
                 e.style.fontSize = selectedFontSize;
             
+            //If there are any childeren change there style too.
             childeren = semElements[selectedElementID].children
             for(i=0; i < childeren.length; i++)
             {
@@ -341,12 +379,14 @@ window.onload = function()
                     childeren[i].style.backgroundColor = selectedBackColor;
             }   
 
+            //If you have selected body remove the image. Otherwise you cant see the new background color.
             if(e.tagName == "BODY" && selectedBackColor != "nothing")
             {
                 e.classList.remove(e.className);
             }        
         }
 
+        //Lastly a resetbutton to "reset" the style. But really just to reload the page, which does the job.
         var reloadButton = document.createElement("button");
         reloadButton.setAttribute("id", "selectorButton");
         reloadButton.textContent = "Reset";
