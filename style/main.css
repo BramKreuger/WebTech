@@ -353,20 +353,20 @@ body.home th, td{
 ~~~~~~~~~~~~~~~~~*/
 select
 {
-  background-color: rgb(175, 111, 86);
+  background-color: rgba(175, 111, 86, 0.637);
   border: none;
   height: 40px;
   margin: 5px; 
 }
 #selectorButton
 {
-  background-color: rgba(175, 111, 86);
+  background-color: rgba(175, 111, 86, 0.637);
   border: none;
   height: 40px;
   margin: 5px; 
 }
 #selectorButton:hover
   {
-    background-color: rgb(129, 82, 63);
+    background-color: rgb(129, 82, 63, 0.637);
   }
 }
