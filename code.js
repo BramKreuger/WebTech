@@ -106,9 +106,8 @@ window.onload = function()
             navLink.className = 'current';
         }
     }
-
-
-    // create necessary elements for a menu
+    
+    // Get necessary elements for a menu
     var header = document.getElementsByTagName('header')[0];
     var menu = document.createElement('div');
     var label = document.createElement('label');
@@ -120,36 +119,27 @@ window.onload = function()
     header.appendChild(menu);
     menu.appendChild(labelText);
 
-	// find all existing modifiable elements on current page    	
-    var allowedList = ['header','footer','body','article','section','aside'];
-    var pageList = [];
-    for (i = 0; i < allowedList.length; i++)
-    {
-        var elementList = document.getElementsByTagName(allowedList[i])[0];
-    	if (elementList !== undefined)
-        {
-            pageList.push(allowedList[i]);
-
-        }
-    }
+	
 
     // add select for modifiable elements 
     var selector1 = document.createElement('select');
     var optgroup1 = document.createElement('optgroup');
-
     optgroup1.setAttribute('label', 'Element')
     menu.append(selector1);
     selector1.appendChild(optgroup1);
+    selector1.onchange = function() {changeSelector1()};
+    
+    // find all existing modifiable elements on current page    	
+    var semElements = document.querySelectorAll('body,nav,header,footer,aside,article,section');
 
-    for (i=0; i< pageList.length;i++) 
+    for(i=0; i < semElements.length; i++)
     {
-        var o = document.createElement('option');
-        o.setAttribute("value", pageList[i]);
-        var t = document.createTextNode(pageList[i]);
-        o.appendChild(t);
-        optgroup1.appendChild(o);
-
-    }
+        var z = document.createElement("option");
+        z.setAttribute("value", i);
+        var t = document.createTextNode(semElements[i].localName);
+        z.appendChild(t);
+        selector1.appendChild(z);            
+    }  
 
     // add select for fontsize
     var selector2 = document.createElement('select');
@@ -158,8 +148,10 @@ window.onload = function()
     optgroup2.setAttribute('label', 'Fontsize')
     menu.appendChild(selector2);
     selector2.appendChild(optgroup2);
+    selector2.onchange = function() {changeSelector2()};
 
-    var fontList = ['default','30','40','50','60'];
+    var selectedFontSize = 30;
+    var fontList = ["xx-small", "x-small", "small", "medium", "large", "x-large", "xx-large"];
     for (i=0; i< fontList.length;i++) 
     {
         var o = document.createElement('option');
@@ -177,8 +169,10 @@ window.onload = function()
     optgroup3.setAttribute('label', 'Color')
     menu.appendChild(selector3);
     selector3.appendChild(optgroup3);
+    selector3.onchange = function() {changeSelector3()};
 
-    var colorList = ['default','blue','red','green','white'];
+    var selectedColor;
+    var colorList = ['blue','red','green','white'];
     for (i=0; i< colorList.length;i++) 
     {
         var o = document.createElement('option');
@@ -192,11 +186,13 @@ window.onload = function()
     var selector4 = document.createElement('select');
     var optgroup4 = document.createElement('optgroup');
 
-    optgroup4.setAttribute('label', 'Fontsize')
+    optgroup4.setAttribute('label', 'Backcolor')
     menu.appendChild(selector4);
     selector4.appendChild(optgroup4);
+    selector4.onchange = function() {changeSelector4()};
 
-    var backgroundList = ['default','blue','red','green','black'];
+    var selectedBackColor;
+    var backgroundList = ['blue','red','green','black'];
     for (i=0; i< backgroundList.length;i++) 
     {
         var o = document.createElement('option');
@@ -205,6 +201,55 @@ window.onload = function()
         o.appendChild(t);
         optgroup4.appendChild(o);
 
+    }
+
+    var styleButton = document.createElement("button");
+    styleButton.textContent = "Change style";
+    styleButton.onclick = function() {styleChange()};
+    menu.appendChild(styleButton);
+
+    var selectedElementID = 0;
+    function changeSelector1()
+    {
+        selectedElementID = selector1.value;
+    }
+
+    var selectedFontSize = "medium";
+    function changeSelector2()
+    {
+        selectedFontSize = selector2.value;
+    }
+    var selectedColor = "blue";
+    function changeSelector3()
+    {
+        selectedColor = selector3.value;
+    }
+
+    var selectedBackColor = "blue";
+    function changeSelector4()
+    {
+        selectedBackColor = selector4.value;
+    }
+
+    function styleChange()
+    {       
+        e = semElements[selectedElementID];          
+        e.style.color = selectedColor;
+        e.style.backgroundColor = selectedBackColor;
+        e.style.fontSize = selectedFontSize;
+        
+        childeren = semElements[selectedElementID].children
+        for(i=0; i < childeren.length; i++)
+        {
+            childeren[i].style.color = selectedColor;
+            childeren[i].style.fontSize = selectedFontSize;
+            childeren[i].style.backgroundColor = selectedBackColor;
+        }   
+        
+        if(e.className == "home")
+        {
+            e.classList.remove("home");
+        }
     }
 
 }
